@@ -117,7 +117,7 @@ export function ClaimPage() {
                   name="departure"
                   placeholder="e.g. Heathrow, JFK, EGLL" 
                   value={formData.departure || ''} 
-                  onChange={(val) => setFormData(prev => ({ ...prev, departure: val }))} 
+                  onChange={(val) => setFormData(prev => ({ ...prev, departure: val, departureCountry: val.length === 4 ? (icaoToCountry[val] || '') : '' }))} 
                 />
               </label>
               <label>
@@ -126,7 +126,7 @@ export function ClaimPage() {
                   name="arrival"
                   placeholder="e.g. Charles de Gaulle, KJFK" 
                   value={formData.arrival || ''} 
-                  onChange={(val) => setFormData(prev => ({ ...prev, arrival: val }))} 
+                  onChange={(val) => setFormData(prev => ({ ...prev, arrival: val, arrivalCountry: val.length === 4 ? (icaoToCountry[val] || '') : '' }))} 
                 />
               </label>
             </div>
