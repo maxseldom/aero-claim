@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import { FlightData, EvaluationResult } from '../types';
+import type { FlightData, EligibilityResult } from '../engine/types';
 
 interface EmailTemplateProps {
   flightData: FlightData;
-  eligibility: EvaluationResult;
+  eligibility: EligibilityResult;
 }
 
 export const EmailTemplate: React.FC<EmailTemplateProps> = ({ flightData, eligibility }) => {
   const [copied, setCopied] = useState(false);
 
-  const airlinePrefix = flightData.flightNumber?.toUpperCase().match(/^[A-Z]+/)?.[0] || 'the Airline';
   const hours = Math.floor((flightData.delayMinutes || 0) / 60);
   const minutes = (flightData.delayMinutes || 0) % 60;
   const delayString = hours > 0 
