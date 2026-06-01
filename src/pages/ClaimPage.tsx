@@ -3,6 +3,7 @@ import type { FlightData, EligibilityResult } from '../engine/types';
 import { EvaluationController } from '../engine/EvaluationController';
 import { submitClaim } from '../api/api';
 import { ClaimGuide } from '../components/ClaimGuide';
+import { AirportAutocomplete } from '../components/AirportAutocomplete';
 import icaoToCountryRaw from '../data/icaoToCountry.json';
 
 const icaoToCountry: Record<string, string> = icaoToCountryRaw;
@@ -109,25 +110,24 @@ export function ClaimPage() {
                 <input type="date" name="date" value={formData.date?.toLowerCase() || ''} onChange={(e) => setFormData(prev => ({...prev, date: e.target.value}))} required />
               </label>
             </div>
-
             <div className="form-group" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <label>
-                Departure Airport (ICAO)
-                <input type="text" name="departure" value={formData.departure || ''} onChange={handleInputChange} placeholder="e.g. CYYZ" maxLength={4} required />
-                {formData.departure?.length === 4 && (
-                  <span style={{ fontSize: '0.85rem', color: formData.departureCountry ? '#10b981' : '#ef4444', marginTop: '4px', display: 'block' }}>
-                    {formData.departureCountry ? `✅ Located in: ${formData.departureCountry}` : '❌ Unknown Airport Code'}
-                  </span>
-                )}
+                Departure Airport
+                <AirportAutocomplete 
+                  name="departure"
+                  placeholder="e.g. Heathrow, JFK, EGLL" 
+                  value={formData.departure || ''} 
+                  onChange={(val) => setFormData(prev => ({ ...prev, departure: val }))} 
+                />
               </label>
               <label>
-                Arrival Airport (ICAO)
-                <input type="text" name="arrival" value={formData.arrival || ''} onChange={handleInputChange} placeholder="e.g. EGLL" maxLength={4} required />
-                {formData.arrival?.length === 4 && (
-                  <span style={{ fontSize: '0.85rem', color: formData.arrivalCountry ? '#10b981' : '#ef4444', marginTop: '4px', display: 'block' }}>
-                    {formData.arrivalCountry ? `✅ Located in: ${formData.arrivalCountry}` : '❌ Unknown Airport Code'}
-                  </span>
-                )}
+                Arrival Airport
+                <AirportAutocomplete 
+                  name="arrival"
+                  placeholder="e.g. Charles de Gaulle, KJFK" 
+                  value={formData.arrival || ''} 
+                  onChange={(val) => setFormData(prev => ({ ...prev, arrival: val }))} 
+                />
               </label>
             </div>
 
