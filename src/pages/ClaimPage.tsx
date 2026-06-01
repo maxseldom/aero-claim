@@ -4,6 +4,7 @@ import { EvaluationController } from '../engine/EvaluationController';
 import { submitClaim } from '../api/api';
 import { ClaimGuide } from '../components/ClaimGuide';
 import { AirportAutocomplete } from '../components/AirportAutocomplete';
+import { EmailTemplate } from '../components/EmailTemplate';
 import icaoToCountryRaw from '../data/icaoToCountry.json';
 
 const icaoToCountry: Record<string, string> = icaoToCountryRaw;
@@ -272,6 +273,7 @@ export function ClaimPage() {
                 </div>
                 <p className="message">{result.message}</p>
                 <ClaimGuide flightNumber={formData.flightNumber || ''} />
+                <EmailTemplate flightData={formData as FlightData} eligibility={result.eligibility!} />
               </div>
             ) : (
               <div className="error-state" style={{ background: 'rgba(239, 68, 68, 0.1)', border: '1px solid var(--error-color)' }}>
