@@ -271,7 +271,7 @@ export function ClaimPage() {
                   <p className="regulation">Under {result.eligibility?.regulationApplied} Framework</p>
                 </div>
                 <p className="message">{result.message}</p>
-                <ClaimGuide airlineCode={formData.flightNumber?.substring(0, 2) || ''} />
+                <ClaimGuide flightNumber={formData.flightNumber || ''} />
               </div>
             ) : (
               <div className="error-state" style={{ background: 'rgba(239, 68, 68, 0.1)', border: '1px solid var(--error-color)' }}>

@@ -3,6 +3,7 @@ import airlineGuidesRaw from '../data/airlineGuides.json';
 
 type AirlineGuide = {
   name: string;
+  icao: string;
   claimUrl: string;
   steps: string[];
 };
@@ -10,12 +11,20 @@ type AirlineGuide = {
 const airlineGuides: Record<string, AirlineGuide> = airlineGuidesRaw;
 
 interface ClaimGuideProps {
-  airlineCode: string;
+  flightNumber: string;
 }
 
-export const ClaimGuide: React.FC<ClaimGuideProps> = ({ airlineCode }) => {
-  const code = airlineCode.toUpperCase().trim();
-  const guide = airlineGuides[code];
+export const ClaimGuide: React.FC<ClaimGuideProps> = ({ flightNumber }) => {
+  // Extract alphabetic prefix (e.g., 'RYR' from 'RYR1234' or 'FR' from 'FR1234')
+  const prefixMatch = flightNumber.trim().toUpperCase().match(/^[A-Z]+/);
+  const code = prefixMatch ? prefixMatch[0] : '';
+
+  // Try matching IATA key first, then search for ICAO value
+  let guide = airlineGuides[code];
+  if (!guide && code.length >= 3) {
+    const found = Object.values(airlineGuides).find(g => g.icao === code);
+    if (found) guide = found;
+  }
 
   if (guide) {
     return (
