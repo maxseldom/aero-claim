@@ -134,9 +134,9 @@
 }
 
 .hero {
-  text-align: center;
+  text-align: left;
   padding: 6rem 0 4rem;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -157,6 +157,7 @@
   margin-bottom: 2.5rem;
   line-height: 1.6;
   font-weight: 500;
+  max-width: 650px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
@@ -231,8 +232,9 @@
 
 /* Home Page Sections (How It Works, Global Coverage) */
 .section-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 3rem;
+  max-width: 800px;
 }
 
 .section-title {
@@ -252,27 +254,29 @@
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   background: rgba(30, 41, 59, 0.3);
-  text-align: center;
+  text-align: left;
 }
 
 .steps-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: stretch;
   gap: 2rem;
   margin-top: 3rem;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .step-card {
   flex: 1;
   min-width: 250px;
-  max-width: 300px;
   padding: 2rem;
   background-color: var(--surface-color);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  text-align: center;
+  text-align: left;
 }
 
 .step-icon {
@@ -284,7 +288,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .step-icon svg {
@@ -321,10 +325,10 @@
 }
 
 .bottom-cta {
-  text-align: center;
+  text-align: left;
   padding: 5rem 0;
   border-top: 1px solid var(--border-color);
-  background: radial-gradient(circle at 50% 100%, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+  background: radial-gradient(circle at 10% 100%, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
 }
 
 .bottom-cta h2 {
@@ -391,7 +395,7 @@
 }
 
 .claim-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 2rem;
 }
 
@@ -511,7 +515,7 @@ button.secondary:hover:not(:disabled) {
 
 /* Result Views */
 .result-view {
-  text-align: center;
+  text-align: left;
 }
 
 .result-view .icon {
@@ -522,7 +526,7 @@ button.secondary:hover:not(:disabled) {
   align-items: center;
   justify-content: center;
   font-size: 32px;
-  margin: 0 auto 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .success-state .icon {

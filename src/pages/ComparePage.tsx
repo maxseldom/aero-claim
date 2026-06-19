@@ -13,8 +13,8 @@ const frameworks = [
 
 export function ComparePage() {
   return (
-    <div className="compare-page animate-fade-in" style={{ padding: '4rem 2rem', maxWidth: '1100px', margin: '0 auto' }}>
-      <div className="section-header" style={{ textAlign: 'center', marginBottom: '3rem' }}>
+    <div className="home-page animate-fade-in" style={{ padding: '4rem 1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
+      <div className="section-header" style={{ marginBottom: '3rem' }}>
         <h1 style={{ fontSize: '2.5rem', fontWeight: '800', background: 'linear-gradient(135deg, #ffffff 0%, #fdba74 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '1rem' }}>
           Global Passenger Rights
         </h1>
