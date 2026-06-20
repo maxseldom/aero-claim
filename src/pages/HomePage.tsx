@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Plane, ShieldCheck, Landmark, Scale, MapPin, Briefcase, FileText, CheckCircle, Search, Zap, Banknote, ArrowRight, ChevronDown } from 'lucide-react';
+import { Plane, ShieldCheck, Landmark, Scale, MapPin, Briefcase, FileText, CheckCircle, ChevronDown } from 'lucide-react';
 
 const faqData = [
   {
@@ -9,19 +9,19 @@ const faqData = [
   },
   {
     question: "Does it cost anything to check my eligibility?",
-    answer: "No, checking your eligibility is 100% free. We scan all global passenger rights frameworks instantly to show you exactly what regulations protect your flight."
+    answer: "No. Checking your eligibility is 100% free. We scan all global passenger rights frameworks instantly to show you exactly what regulations protect your flight."
   },
   {
     question: "What documents do I need to file a claim?",
-    answer: "You typically need your boarding pass, booking confirmation or e-ticket, and any notification emails or delay certificates from the airline. Keeping copies of food, drink, or accommodation receipts is also highly recommended if you spent money during the delay."
+    answer: "You typically need your boarding pass, booking confirmation or e-ticket, and any notification emails from the airline. Keep copies of food, drink, or accommodation receipts if you spent money during the delay."
   },
   {
     question: "How long does the compensation process take?",
-    answer: "Most claims are processed by airlines within 4 to 12 weeks. If the airline is unresponsive or contests the claim, it can take longer if escalated to a national enforcement body or legal court. We help ensure your claim is fully documented to minimize delays."
+    answer: "Airlines typically process claims within 4 to 12 weeks. If the airline contests the claim, it can take longer. We help ensure your claim is fully documented to minimize delays."
   },
   {
     question: "What counts as an 'extraordinary circumstance'?",
-    answer: "Airlines are generally exempt from paying compensation if the disruption is caused by factors outside their control. This includes severe weather conditions, air traffic control strikes, security threats, or sudden airport closures. Airline-specific issues like crew shortages, scheduling mistakes, or technical faults with the aircraft are not considered extraordinary circumstances, and you are eligible."
+    answer: "Airlines are exempt from paying compensation if the disruption is caused by factors outside their control, such as severe weather or air traffic control strikes. Crew shortages or technical faults are not considered extraordinary circumstances."
   }
 ];
 
@@ -36,32 +36,68 @@ export function HomePage() {
     <div className="home-page animate-fade-in">
       {/* Hero Section */}
       <section className="hero">
-        <h1>Democratizing passenger rights worldwide</h1>
-        <p>Don't let airlines keep your money. Empowering travelers to easily claim compensation for delayed, canceled, or overbooked flights globally.</p>
+        <h1>Airlines rely on bureaucracy.<br/>We rely on the law.</h1>
+        <p>Check your eligibility for up to $650 in flight compensation in under two minutes. 100% free. No middlemen.</p>
         <Link to="/claim" className="cta-button">Check Eligibility Now</Link>
       </section>
 
+      {/* Trust & Pricing Section */}
+      <section className="trust-section" style={{ padding: '3rem 0', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ flex: '1', minWidth: '300px' }}>
+            <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>The standard "No Win, No Fee" model is broken.</h2>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>Traditional claim agencies take up to 30% of your compensation just for sending an email on your behalf. We believe you should keep 100% of what you are legally owed.</p>
+          </div>
+          <div style={{ flex: '1', minWidth: '300px' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+              <tbody>
+                <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
+                  <th style={{ padding: '1rem 0', fontWeight: '600' }}>Traditional Agencies</th>
+                  <td style={{ padding: '1rem 0', color: 'var(--error-color)', fontWeight: '500' }}>Take a 30% Cut</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
+                  <th style={{ padding: '1rem 0', fontWeight: '600' }}>Our Platform</th>
+                  <td style={{ padding: '1rem 0', color: 'var(--success-color)', fontWeight: '500' }}>100% Free</td>
+                </tr>
+                <tr>
+                  <th style={{ padding: '1rem 0', fontWeight: '600' }}>Your Payout</th>
+                  <td style={{ padding: '1rem 0', fontWeight: '600' }}>You keep everything.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       {/* How It Works Section */}
-      <section className="how-it-works animate-fade-in" style={{ animationDelay: '0.2s' }}>
+      <section className="how-it-works animate-fade-in" style={{ animationDelay: '0.2s', borderTop: 'none' }}>
         <h2 className="section-title">How It Works</h2>
         <div className="steps-container">
           <div className="step-card">
-            <div className="step-icon"><Search /></div>
-            <h3>1. Enter Details</h3>
-            <p>Tell us about your flight disruption—no legal jargon required.</p>
+            <div className="step-icon">1</div>
+            <h3>Tell us what happened</h3>
+            <p>Enter your flight details. No legal jargon required.</p>
           </div>
-          <div className="step-arrow"><ArrowRight /></div>
           <div className="step-card">
-            <div className="step-icon"><Zap /></div>
-            <h3>2. Instant Check</h3>
-            <p>Our engine instantly routes your claim to the correct regulation framework globally.</p>
+            <div className="step-icon">2</div>
+            <h3>We analyze the law</h3>
+            <p>Our engine routes your claim to the correct regulation framework globally.</p>
           </div>
-          <div className="step-arrow"><ArrowRight /></div>
           <div className="step-card">
-            <div className="step-icon"><Banknote /></div>
-            <h3>3. Get Compensated</h3>
-            <p>Find out exactly what you're owed and start your claim immediately.</p>
+            <div className="step-icon">3</div>
+            <h3>You send the demand</h3>
+            <p>Use our generated, highly-formal legal letters to demand your compensation directly.</p>
           </div>
+        </div>
+      </section>
+
+      {/* Social Proof / Editorial Quote */}
+      <section className="social-proof" style={{ padding: '5rem 0', backgroundColor: 'var(--surface-color)', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ fontFamily: 'var(--font-serif)', fontSize: '1.75rem', lineHeight: '1.5', color: 'var(--text-primary)', marginBottom: '1.5rem', fontStyle: 'italic' }}>
+            "I was ignored by the airline for six weeks. Generating the exact legal statute through this platform and pasting it into their web portal got my €600 transferred in 3 days."
+          </p>
+          <p style={{ fontWeight: '600', letterSpacing: '0.5px', textTransform: 'uppercase', fontSize: '0.85rem' }}>— M. Davis, London</p>
         </div>
       </section>
 
@@ -145,8 +181,8 @@ export function HomePage() {
 
       {/* Bottom CTA */}
       <section className="bottom-cta animate-fade-in" style={{ animationDelay: '0.6s' }}>
-        <h2>Ready to claim what's yours?</h2>
-        <p>Don't leave your compensation with the airlines. It takes 2 minutes to check.</p>
+        <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.5rem', marginBottom: '1rem' }}>Ready to claim what's yours?</h2>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '1.125rem', marginBottom: '2rem' }}>We handle the bureaucracy; you get your money.</p>
         <Link to="/claim" className="cta-button">Check Eligibility Now</Link>
       </section>
     </div>

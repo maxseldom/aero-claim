@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 :root {
-  --primary: #f97316;
-  --primary-hover: #ea580c;
-  --bg-color: #0f172a;
-  --surface-color: #1e293b;
-  --surface-hover: #334155;
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --border-color: #334155;
-  --error-color: #ef4444;
-  --success-color: #10b981;
-  --border-radius: 16px;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --primary: #d97743;
+  --primary-hover: #c46332;
+  --bg-color: #fdfbf7;
+  --surface-color: #ffffff;
+  --surface-hover: #f5f4ef;
+  --text-primary: #1c1f26;
+  --text-secondary: #4a505c;
+  --border-color: #e2e0da;
+  --error-color: #d93838;
+  --success-color: #2c7a51;
+  --border-radius: 4px;
+  --transition: all 0.2s ease-in-out;
+  --font-serif: 'Lora', 'Playfair Display', serif;
 }
 
 * {
@@ -23,11 +24,16 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background: radial-gradient(circle at 50% -20%, rgba(249, 115, 22, 0.12) 0%, #0f172a 70%);
-  background-attachment: fixed;
+  background-color: var(--bg-color);
   color: var(--text-primary);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--text-primary);
 }
 
 #root {
@@ -40,7 +46,7 @@ input, select, textarea {
   padding: 0.875rem 1rem;
   background-color: var(--bg-color);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   color: var(--text-primary);
   font-size: 1rem;
   font-family: inherit;
@@ -58,7 +64,9 @@ input:focus, select:focus, textarea:focus {
 label {
   font-weight: 600;
   color: var(--text-primary);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
   display: block;
 }
 
@@ -66,7 +74,7 @@ button {
   background-color: var(--primary);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   padding: 0.875rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;

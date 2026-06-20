@@ -12,8 +12,7 @@
 
 /* Navbar */
 .navbar {
-  background-color: rgba(30, 41, 59, 0.8);
-  backdrop-filter: blur(10px);
+  background-color: var(--surface-color);
   border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
@@ -76,7 +75,7 @@
 
 /* Footer */
 .footer {
-  background-color: #0b1120;
+  background-color: var(--bg-color);
   border-top: 1px solid var(--border-color);
   padding: 3rem 2rem 1.5rem;
   margin-top: 4rem;
@@ -141,42 +140,37 @@
 }
 
 .hero h1 {
-  font-size: 3.5rem;
-  line-height: 1.2;
-  font-weight: 800;
+  font-size: 3.8rem;
+  line-height: 1.1;
+  font-weight: 700;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #ffffff 0%, #fdba74 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+  color: var(--text-primary);
+  letter-spacing: -1px;
 }
 
 .hero p {
   font-size: 1.25rem;
-  color: var(--text-primary);
+  color: var(--text-secondary);
   margin-bottom: 2.5rem;
   line-height: 1.6;
-  font-weight: 500;
+  font-family: var(--font-serif);
   max-width: 650px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .cta-button {
   display: inline-block;
-  background: linear-gradient(135deg, var(--primary) 0%, #fb923c 100%);
+  background-color: var(--primary);
   color: white;
   padding: 1rem 2rem;
   font-size: 1.125rem;
   font-weight: 600;
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   text-decoration: none;
   transition: var(--transition);
-  box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3);
 }
 
 .cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 25px -5px rgba(249, 115, 22, 0.4);
+  background-color: var(--primary-hover);
 }
 
 .features-grid {
@@ -189,27 +183,22 @@
 .feature-card {
   background-color: var(--surface-color);
   border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 1.25rem;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
   transition: var(--transition);
 }
 
 .feature-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(249, 115, 22, 0.5);
-  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.3);
+  border-color: var(--primary);
 }
 
 .feature-icon {
   width: 36px;
   height: 36px;
-  background: rgba(249, 115, 22, 0.1);
   color: var(--primary);
-  border-radius: 8px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .feature-icon svg {
@@ -253,7 +242,7 @@
   padding: 4rem 0;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
-  background: rgba(30, 41, 59, 0.3);
+  background-color: var(--surface-color);
   text-align: left;
 }
 
@@ -272,23 +261,16 @@
 .step-card {
   flex: 1;
   min-width: 250px;
-  padding: 2rem;
-  background-color: var(--surface-color);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
+  padding: 2rem 2rem 2rem 0;
   text-align: left;
 }
 
 .step-icon {
-  width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(251, 146, 60, 0.2) 100%);
-  color: var(--primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  color: var(--border-color);
+  line-height: 1;
+  margin-bottom: 1rem;
 }
 
 .step-icon svg {
@@ -328,7 +310,7 @@
   text-align: left;
   padding: 5rem 0;
   border-top: 1px solid var(--border-color);
-  background: radial-gradient(circle at 10% 100%, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+  background-color: var(--surface-color);
 }
 
 .bottom-cta h2 {
@@ -403,9 +385,7 @@
   font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #fdba74 0%, #ea580c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-primary);
 }
 
 .claim-header p {
@@ -418,7 +398,6 @@
   border-radius: var(--border-radius);
   padding: 2.5rem;
   width: 100%;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
   border: 1px solid var(--border-color);
 }
 
@@ -432,7 +411,7 @@
 
 .progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #f97316 0%, #fb923c 100%);
+  background-color: var(--primary);
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
